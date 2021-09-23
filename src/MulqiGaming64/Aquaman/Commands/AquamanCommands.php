@@ -12,20 +12,13 @@ use MulqiGaming64\Aquaman\Aquaman;
 
 class AquamanCommands extends Command implements PluginIdentifiableCommand{
 	
-	/** @var Aquaman */
-	private $plugin;
+	/** @var Aquaman $plugin */
+	protected $plugin;
 	
 	public function __construct(Aquaman $plugin){
+		$this->plugin = $plugin;
         parent::__construct("aquaman", "Turn into Aquaman", "/aquaman");
-        $this->plugin = $plugin;
     }
-    
-        /**
-        * @return Plugin|Aquaman
-        */
-	public function getPlugin(): Aquaman{
-		return $this->plugin;
-	}
     
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
     	if(!$sender instanceof Player){
@@ -36,7 +29,7 @@ class AquamanCommands extends Command implements PluginIdentifiableCommand{
     		$sender->sendMessage("§cYou don't Have Permissions");
     		return false;
     	}
-    	if($this->getPlugin()->setAquaman($sender)){
+    	if($this->plugin->setAquaman($sender)){
     		$sender->sendMessage("§aYou've turned into Aquaman");
     	} else {
     		$sender->sendMessage("§aYou turn into an ordinary human");
