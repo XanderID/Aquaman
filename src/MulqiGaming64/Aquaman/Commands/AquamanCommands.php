@@ -5,6 +5,7 @@ namespace MulqiGaming64\Aquaman\Commands;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\PluginIdentifiableCommand;
@@ -36,4 +37,11 @@ class AquamanCommands extends Command implements PluginIdentifiableCommand{
     	}
         return true;
 	}
+	
+	/**
+     * @return Aquaman|Plugin $plugin
+     */
+    public function getPlugin(): Plugin {
+        return $this->plugin;
+    }
 }
