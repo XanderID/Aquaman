@@ -19,9 +19,6 @@ class AquamanCommands extends Command implements PluginIdentifiableCommand{
         $this->plugin = $plugin;
     }
     
-    /**
-	* @return Aquaman
-	*/
 	public function getPlugin(): Aquaman{
 		return $this->plugin;
 	}
