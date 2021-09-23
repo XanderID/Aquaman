@@ -1,0 +1,11 @@
+name: Aquaman
+main: MulqiGaming64\Aquaman\Aquaman
+version: 1.0.0
+api: 3.0.0
+description: now you can breathe in water without limit
+author: MulqiGaming64
+
+permissions:
+ aquaman.transform:
+  default: op
+  description: Transform Into Aquaman
