@@ -2,23 +2,22 @@
 
 namespace MulqiGaming64\Aquaman\Commands;
 
-use pocketmine\Player;
-use pocketmine\Server;
-use pocketmine\plugin\Plugin;
-use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
+use pocketmine\player\Player;
 use pocketmine\command\CommandSender;
-use pocketmine\command\PluginIdentifiableCommand;
+use pocketmine\plugin\PluginOwned;
+use pocketmine\utils\TextFormat;
 use MulqiGaming64\Aquaman\Aquaman;
 
-class AquamanCommands extends Command implements PluginIdentifiableCommand{
+class AquamanCommands extends Command implements PluginOwned {
 	
 	/** @var Aquaman $plugin */
-	protected $plugin;
+	private $plugin;
 	
 	public function __construct(Aquaman $plugin){
 		$this->plugin = $plugin;
         parent::__construct("aquaman", "Turn into Aquaman", "/aquaman");
+        $this->setPermission("aquaman.transform");
     }
     
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
@@ -26,11 +25,8 @@ class AquamanCommands extends Command implements PluginIdentifiableCommand{
     		$sender->sendMessage("Use Commands in Game");
     		return false;
     	}
-    	if(!$sender->hasPermission("aquaman.transform")){
-    		$sender->sendMessage("§cYou don't Have Permissions");
-    		return false;
-    	}
-    	if($this->plugin->setAquaman($sender)){
+    	if (!$this->testPermission($sender)) return false;
+    	if($this->getOwningPlugin()->setAquaman($sender)){
     		$sender->sendMessage("§aYou've turned into Aquaman");
     	} else {
     		$sender->sendMessage("§aYou turn into an ordinary human");
@@ -38,10 +34,7 @@ class AquamanCommands extends Command implements PluginIdentifiableCommand{
         return true;
 	}
 	
-	/**
-     * @return Aquaman|Plugin $plugin
-     */
-    public function getPlugin(): Plugin {
+	public function getOwningPlugin(): Aquaman{
         return $this->plugin;
     }
 }
