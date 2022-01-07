@@ -2,8 +2,8 @@
 
 namespace MulqiGaming64\Aquaman;
 
+use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\Player;
 use pocketmine\scheduler\ClosureTask;
 use pocketmine\entity\Living;
 
@@ -14,10 +14,10 @@ class Aquaman extends PluginBase{
 	/** @return array */
 	private $aquaman = [];
 	
-    public function onEnable(){
+    public function onEnable(): void{
     	$this->getScheduler()->scheduleRepeatingTask(new ClosureTask(
-        	function(int $currentTick): void{
-            	foreach($this->getServer()->getOnlinePlayers() as $player){
+        	function(){
+        		foreach($this->getServer()->getOnlinePlayers() as $player){
 					$name = strtolower($player->getName());
 					if(isset($this->aquaman[$name])){
 						if($player instanceof Living){
