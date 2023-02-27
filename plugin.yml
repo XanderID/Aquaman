@@ -1,9 +1,9 @@
 name: Aquaman
-main: MulqiGaming64\Aquaman\Aquaman
+main: XanderID\Aquaman\Aquaman
 version: 1.0.0
 api: 4.0.0
 description: now you can breathe in water without limit
-author: MulqiGaming64
+author: XanderID
 
 permissions:
  aquaman.transform:

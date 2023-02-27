@@ -1,13 +1,13 @@
 <?php
 
-namespace MulqiGaming64\Aquaman;
+namespace XanderID\Aquaman;
 
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\ClosureTask;
 use pocketmine\entity\Living;
 
-use MulqiGaming64\Aquaman\Commands\AquamanCommands;
+use XanderID\Aquaman\Commands\AquamanCommands;
 
 class Aquaman extends PluginBase{
 	

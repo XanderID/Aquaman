@@ -20,4 +20,4 @@ Permission | Default | Description
 # Additional Notes
 
 - Icons by [icons8.com](https://icons8.com)
-- If you find bugs or want to give suggestions, please visit [here](https://github.com/MulqiGaming64/Aquaman/issues)
+- If you find bugs or want to give suggestions, please visit [here](https://github.com/XanderID/Aquaman/issues)

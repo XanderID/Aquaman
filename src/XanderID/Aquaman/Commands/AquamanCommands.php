@@ -1,13 +1,13 @@
 <?php
 
-namespace MulqiGaming64\Aquaman\Commands;
+namespace XanderID\Aquaman\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\player\Player;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginOwned;
 use pocketmine\utils\TextFormat;
-use MulqiGaming64\Aquaman\Aquaman;
+use XanderID\Aquaman\Aquaman;
 
 class AquamanCommands extends Command implements PluginOwned {
 	
